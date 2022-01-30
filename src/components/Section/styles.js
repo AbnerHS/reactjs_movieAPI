@@ -12,10 +12,10 @@ export const Section = styled.div`
 
 export const SectionMovies = styled.div`
   ${({ marginLeft }) => css`
-    width: 9999999999px;
+    width: 5000px;
     display: flex;
     overflow: hidden;
-    transition: all 0.8s;
+    transition: all 0.5s;
     margin-left: ${marginLeft}px;
   `}
   &:hover {

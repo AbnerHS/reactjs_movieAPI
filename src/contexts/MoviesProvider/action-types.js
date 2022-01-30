@@ -6,3 +6,5 @@ export const GET_MOVIE_END = 'GET_MOVIE_END';
 export const CLEAN_UP = 'CLEAN_UP';
 export const MOVE_RIGHT = 'MOVE_RIGHT';
 export const MOVE_LEFT = 'MOVE_LEFT';
+export const DRAG_START = 'DRAG_START';
+export const DRAG_END = 'DRAG_END';

@@ -41,6 +41,31 @@ export const reducer = (state, action) => {
           }
         }),
       };
+    case actionTypes.DRAG_START:
+      return { ...state, pageX: action.pageX };
+    case actionTypes.DRAG_END:
+      return {
+        ...state,
+        positions: state.positions.map((pos, index) => {
+          if (index === action.index) {
+            if (state.pageX < action.pageX) {
+              if (pos.x + Math.round(window.innerWidth / 2) <= 0) {
+                return { ...pos, x: pos.x + Math.round(window.innerWidth / 2) };
+              } else {
+                return pos;
+              }
+            } else {
+              if (pos.x - Math.round(window.innerWidth / 2) >= -18 * 165) {
+                return { ...pos, x: pos.x - Math.round(window.innerWidth / 2) };
+              } else {
+                return pos;
+              }
+            }
+          } else {
+            return pos;
+          }
+        }),
+      };
     case actionTypes.CLEAN_UP:
       return initialState;
   }
