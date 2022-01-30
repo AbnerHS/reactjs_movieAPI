@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import * as Styled from './styles';
 import { Section } from '../../components/Section';
 import { useMovieContext } from '../../contexts/MoviesProvider';
-import * as API from '../../utils/imdb';
+import * as API from '../../utils/tmdb';
 
 export const Home = () => {
   const [state, actions] = useMovieContext();

@@ -1,5 +1,5 @@
 import * as actionTypes from './action-types';
-import * as API from '../../utils/imdb';
+import * as API from '../../utils/tmdb';
 export const buildActions = (dispatch) => {
   return {
     loadMovies: (url, slug, title) => asyncLoadMovies(dispatch, url, slug, title),

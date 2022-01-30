@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   ${() => css`
-    padding-top: 60px;
+    padding-top: 100px;
   `}
 `;
 
