@@ -44,5 +44,4 @@ export const reducer = (state, action) => {
     case actionTypes.CLEAN_UP:
       return initialState;
   }
-  return state;
 };

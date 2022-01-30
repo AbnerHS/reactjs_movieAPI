@@ -5,8 +5,8 @@ export const buildActions = (dispatch) => {
     loadMovies: (url, slug, title) => asyncLoadMovies(dispatch, url, slug, title),
     getMovie: (id) => asyncGetMovie(dispatch, id),
     cleanUp: () => dispatch({ type: actionTypes.CLEAN_UP }),
-    moveRight: (index) => dispatch({ type: actionTypes.MOVE_RIGHT, index: index }),
-    moveLeft: (index) => dispatch({ type: actionTypes.MOVE_LEFT, index: index }),
+    moveRight: (index) => dispatch({ type: actionTypes.MOVE_RIGHT, index: index, length: length }),
+    moveLeft: (index) => dispatch({ type: actionTypes.MOVE_LEFT, index: index, length: length }),
   };
 };
 

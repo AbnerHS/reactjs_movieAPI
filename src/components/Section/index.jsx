@@ -8,6 +8,7 @@ import { useMovieContext } from '../../contexts/MoviesProvider';
 
 export const Section = ({ title, movies, index }) => {
   const [state, actions] = useMovieContext();
+
   return (
     <Styled.Section>
       <Styled.SectionTitle>{title}</Styled.SectionTitle>

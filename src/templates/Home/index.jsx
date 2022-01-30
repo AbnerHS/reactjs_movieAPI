@@ -3,8 +3,6 @@ import { Section } from '../../components/Section';
 import { useMovieContext } from '../../contexts/MoviesProvider';
 import * as API from '../../utils/imdb';
 
-import * as Styled from './styles';
-
 export const Home = () => {
   const [state, actions] = useMovieContext();
   useEffect(() => {
@@ -12,21 +10,17 @@ export const Home = () => {
     return () => actions.cleanUp();
   }, [actions]);
 
-  useEffect(() => {
-    console.log(state);
-  }, [state]);
-
   if (state.loading) {
     return <h2>Loading</h2>;
   }
 
   if (!state.loading) {
     return (
-      <>
+      <div>
         {state.collect.map((collect, index) => (
           <Section index={index} key={collect.slug} movies={collect.results} title={collect.title} />
         ))}
-      </>
+      </div>
     );
   }
 };

@@ -11,12 +11,12 @@ export const Section = styled.div`
 `;
 
 export const SectionMovies = styled.div`
-  ${(position) => css`
+  ${({ marginLeft }) => css`
     width: 9999999999px;
     display: flex;
     overflow: hidden;
-    ${position};
     transition: all 0.8s;
+    margin-left: ${marginLeft}px;
   `}
   &:hover {
     ${Arrow} {

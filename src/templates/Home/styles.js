@@ -7,7 +7,3 @@ export const SectionMovies = styled.div`
     overflow-x: scroll;
   `}
 `;
-
-export const SectionTitle = styled.h2`
-  ${() => css``}
-`;
