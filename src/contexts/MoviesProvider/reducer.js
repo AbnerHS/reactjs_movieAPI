@@ -42,24 +42,28 @@ export const reducer = (state, action) => {
         }),
       };
     case actionTypes.DRAG_START:
-      return { ...state, pageX: action.pageX };
+      return { ...state, pageX: action.pageX, pageY: action.pageY };
     case actionTypes.DRAG_END:
       return {
         ...state,
         positions: state.positions.map((pos, index) => {
           if (index === action.index) {
-            if (state.pageX < action.pageX) {
-              if (pos.x + Math.round(window.innerWidth / 2) <= 0) {
-                return { ...pos, x: pos.x + Math.round(window.innerWidth / 2) };
+            if (Math.abs(state.pageY - action.pageY) < 200) {
+              if (state.pageX < action.pageX) {
+                if (pos.x + Math.round(window.innerWidth / 2) <= 0) {
+                  return { ...pos, x: pos.x + Math.round(window.innerWidth / 2) };
+                } else {
+                  return pos;
+                }
               } else {
-                return pos;
+                if (pos.x - Math.round(window.innerWidth / 2) >= -18 * 165) {
+                  return { ...pos, x: pos.x - Math.round(window.innerWidth / 2) };
+                } else {
+                  return pos;
+                }
               }
             } else {
-              if (pos.x - Math.round(window.innerWidth / 2) >= -18 * 165) {
-                return { ...pos, x: pos.x - Math.round(window.innerWidth / 2) };
-              } else {
-                return pos;
-              }
+              return pos;
             }
           } else {
             return pos;

@@ -1,9 +1,25 @@
 import styled, { css } from 'styled-components';
 
-export const SectionMovies = styled.div`
+export const Container = styled.div`
   ${() => css`
-    width: 100%;
+    padding-top: 60px;
+  `}
+`;
+
+export const Loading = styled.div`
+  ${() => css`
     display: flex;
-    overflow-x: scroll;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80vh;
+  `}
+`;
+
+export const Heading = styled.h1`
+  ${({ theme }) => css`
+    text-align: center;
+    color: ${theme.colors.white};
+    font-family: ${theme.fonts.arial};
   `}
 `;

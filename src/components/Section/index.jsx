@@ -5,19 +5,15 @@ import { Arrow } from '../Arrow';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import { useMovieContext } from '../../contexts/MoviesProvider';
-import { useEffect } from 'react';
 
 export const Section = ({ title, movies, index }) => {
   const [state, actions] = useMovieContext();
-  useEffect(() => {
-    // console.log(state);
-  }, [state]);
 
   return (
     <Styled.Section
       onDragStart={(e) => e.preventDefault()}
-      onTouchStart={(event) => actions.dragStart(event.changedTouches[0].clientX)}
-      onTouchEnd={(event) => actions.dragEnd(event.changedTouches[0].clientX, index)}
+      onTouchStart={(e) => actions.dragStart(e.changedTouches[0].clientX, e.changedTouches[0].clientY)}
+      onTouchEnd={(e) => actions.dragEnd(e.changedTouches[0].clientX, e.changedTouches[0].clientY, index)}
     >
       <Styled.SectionTitle>{title}</Styled.SectionTitle>
       <Styled.SectionMovies marginLeft={state.positions[index].x}>

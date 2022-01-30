@@ -5,10 +5,10 @@ export const buildActions = (dispatch) => {
     loadMovies: (url, slug, title) => asyncLoadMovies(dispatch, url, slug, title),
     getMovie: (id) => asyncGetMovie(dispatch, id),
     cleanUp: () => dispatch({ type: actionTypes.CLEAN_UP }),
-    moveRight: (index) => dispatch({ type: actionTypes.MOVE_RIGHT, index: index }),
-    moveLeft: (index) => dispatch({ type: actionTypes.MOVE_LEFT, index: index }),
-    dragStart: (pageX) => dispatch({ type: actionTypes.DRAG_START, pageX }),
-    dragEnd: (pageX, index) => dispatch({ type: actionTypes.DRAG_END, index, pageX }),
+    moveRight: (index) => dispatch({ type: actionTypes.MOVE_RIGHT, index }),
+    moveLeft: (index) => dispatch({ type: actionTypes.MOVE_LEFT, index }),
+    dragStart: (pageX, pageY) => dispatch({ type: actionTypes.DRAG_START, pageX, pageY }),
+    dragEnd: (pageX, pageY, index) => dispatch({ type: actionTypes.DRAG_END, pageX, pageY, index }),
   };
 };
 

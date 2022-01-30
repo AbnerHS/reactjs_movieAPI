@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+
+import * as Styled from './styles';
 import { Section } from '../../components/Section';
 import { useMovieContext } from '../../contexts/MoviesProvider';
 import * as API from '../../utils/imdb';
@@ -11,16 +13,22 @@ export const Home = () => {
   }, [actions]);
 
   if (state.loading) {
-    return <h2>Loading</h2>;
+    return (
+      <Styled.Container>
+        <Styled.Loading>
+          <Styled.Heading>Loading</Styled.Heading>
+        </Styled.Loading>
+      </Styled.Container>
+    );
   }
 
   if (!state.loading) {
     return (
-      <div>
+      <Styled.Container>
         {state.collect.map((collect, index) => (
           <Section index={index} key={collect.slug} movies={collect.results} title={collect.title} />
         ))}
-      </div>
+      </Styled.Container>
     );
   }
 };

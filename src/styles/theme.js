@@ -4,4 +4,7 @@ export const theme = {
     black: 'black',
     white: 'white',
   },
+  fonts: {
+    arial: 'Arial, Helvetica, sans-serif',
+  },
 };

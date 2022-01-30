@@ -14,15 +14,21 @@ export const View = () => {
   }, [state]);
 
   if (state.loading) {
-    return <Styled.MovieTitle>Loading</Styled.MovieTitle>;
+    return (
+      <Styled.Container>
+        <Styled.Loading>
+          <Styled.Heading>Loading</Styled.Heading>
+        </Styled.Loading>
+      </Styled.Container>
+    );
   }
 
   if (!state.loading && state.movie) {
     return (
-      <div>
+      <Styled.Container>
         <Styled.MovieTitle>{state.movie.title}</Styled.MovieTitle>
         <img src={`https://image.tmdb.org/t/p/w300${state.movie.poster_path}`} alt={state.movie.title} />
-      </div>
+      </Styled.Container>
     );
   }
   return <h1>xiii</h1>;

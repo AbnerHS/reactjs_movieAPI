@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import { MovieContextProvider, MoviesContextProvider } from './contexts/MoviesProvider';
+import { Menu } from './components/Menu';
+import { MoviesContextProvider } from './contexts/MoviesProvider';
 
 import { GlobalStyles } from './styles/global-styles';
 import { theme } from './styles/theme';
@@ -13,6 +14,7 @@ ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <BrowserRouter>
+        <Menu />
         <Routes>
           <Route
             path="/"
