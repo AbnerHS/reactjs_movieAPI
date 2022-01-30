@@ -8,7 +8,6 @@ export const View = () => {
   const [state, actions] = useMovieContext();
   useEffect(() => {
     actions.getMovie(id);
-    console.log('carregando um filme');
   }, [actions, id]);
   useEffect(() => {
     console.log(state);

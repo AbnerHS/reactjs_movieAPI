@@ -1,18 +1,29 @@
 import styled, { css } from 'styled-components';
+import { Arrow } from '../Arrow/styles';
 
 export const Section = styled.div`
   ${() => css`
     width: 100%;
     height: auto;
+    margin-bottom: 30px;
+    overflow: hidden;
   `}
 `;
 
 export const SectionMovies = styled.div`
-  ${() => css`
-    width: 100%;
+  ${(position) => css`
+    width: 9999999999px;
     display: flex;
-    overflow-x: hidden;
+    overflow: hidden;
+    ${position};
+    transition: all 0.8s;
   `}
+  &:hover {
+    ${Arrow} {
+      opacity: 1;
+      transition: all 0.3s;
+    }
+  }
 `;
 
 export const SectionTitle = styled.h2`

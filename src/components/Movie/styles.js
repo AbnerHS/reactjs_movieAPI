@@ -13,6 +13,6 @@ export const Wrapper = styled.div`
 
 export const Image = styled.img`
   ${() => css`
-    height: 300px;
+    height: 250px;
   `}
 `;
